@@ -16,12 +16,11 @@ dataset).
 
   | # | Feature | Meaning | Range in pretraining data |
   |---|---------|---------|---------------------------|
-  | 1 | `Z-eff-C` | effective core-electron feature (dimensionless) | 4.823 – 6.237 |
-  | 2 | `Ia-b` | ionic radius difference feature (dimensionless) | 0.556 – 0.736 |
-  | 3 | `T` | temperature (K) | 25 – 1500 |
+  | 1 | `Z-eff-C` | effective core-electron feature (dimensionless) | 
+  | 2 | `Ia-b` | ionic radius difference feature (dimensionless) | 
+  | 3 | `T` | temperature (K) | 
 
-- **Output** : thermal conductivity κ, range 0.905 – 3.962 W/(m·K) in
-  pretraining data.
+- **Output** : thermal conductivity κ
 
 - **Architecture** (KappaMLP, 11,393 parameters, shared by both models):
 
@@ -32,8 +31,7 @@ dataset).
 
 - **Transfer-learning scheme**: the fine-tuned model was obtained by loading
   the base weights, **freezing the first two Linear layers** (they remain
-  byte-identical to the base model), and fine-tuning the remaining layers on a
-  238-row downstream dataset.
+  byte-identical to the base model), and fine-tuning the remaining layers.
 
 - **Preprocessing** : MinMax scaling of X and y with constants fitted on the
   872-row pretraining set (inlined in `scalers.py`, no pickle/sklearn
