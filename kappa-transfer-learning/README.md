@@ -14,8 +14,8 @@ dataset).
 
 - **Input** : 3 features, raw physical units (scaling handled internally):
 
-  | # | Feature | Meaning | Range in pretraining data |
-  |---|---------|---------|---------------------------|
+  | # | Feature | Meaning | 
+  |---|---------|---------|
   | 1 | `Z-eff-C` | effective core-electron feature (dimensionless) | 
   | 2 | `Ia-b` | ionic radius difference feature (dimensionless) | 
   | 3 | `T` | temperature (K) | 
